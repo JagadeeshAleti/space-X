@@ -2,7 +2,12 @@ import React from "react";
 import axios from "axios";
 import { Launch } from "../Launch/Launch";
 import "./styles.css";
+
 export class LaunchList extends React.Component {
+  state = {
+    launches: [],
+  };
+
   componentDidMount = () => {
     this.getLaunches();
   };
@@ -11,7 +16,9 @@ export class LaunchList extends React.Component {
     axios
       .get("https://api.spacexdata.com/v3/launches")
       .then((response) => {
-        console.log(response.data);
+        this.setState({
+          launches: response.data,
+        });
       })
       .catch((error) => {
         console.error(error);
@@ -19,6 +26,7 @@ export class LaunchList extends React.Component {
   };
 
   render() {
+    console.log(this.state.launches[0]);
     return (
       <div className="launch-list">
         <Launch
