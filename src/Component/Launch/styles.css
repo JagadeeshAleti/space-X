@@ -1,10 +1,8 @@
 .launch {
   height: 200px;
-  width: 1000px;
+  width: 100%;
   padding: 8px;
   display: flex;
-  margin-left: 50px;
-  margin-top: 50px;
   cursor: pointer;
   border-radius: 4px;
   box-shadow: 1px 1px 9px 1px darkgrey;
