@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { withRouter } from "react-router";
+import "./styles.css";
+
 export class LaunchView extends React.Component {
   state = {
     launch: {},
@@ -25,7 +27,7 @@ export class LaunchView extends React.Component {
   launchAttribute = (title, key) => {
     const value = this.state.launch[key];
     return (
-      <div>
+      <div className="attribute">
         <h1>{title}</h1>
         <h1>{value}</h1>
       </div>
@@ -35,11 +37,11 @@ export class LaunchView extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <div>
+      <div className="launch-view">
         {this.launchAttribute("Mission Name", "mission_name")}
         {this.launchAttribute("Flight Number", "flight_number")}
         {this.launchAttribute("Launch Date", "launch_date_local")}
-        {this.launchAttribute("Details", "details")}
+        <p className="description">{this.state.launch.details}</p>
       </div>
     );
   }
