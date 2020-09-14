@@ -25,29 +25,26 @@ export class LaunchList extends React.Component {
       });
   };
 
+  launchlist = () => {
+    const launchList = this.state.launches.map((launch, index) => {
+      const image =
+        launch.links.flickr_images.length === 0
+          ? "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSvtncECc4eL_-DVufFbTrFxAnV54KtACItKg&usqp=CAU"
+          : launch.links.flickr_images[0];
+      return (
+        <Launch
+          key={"launch_" + index}
+          banner={image}
+          title={launch.mission_name}
+          launchDate={launch.launch_date_local}
+          description={launch.details}
+        />
+      );
+    });
+    return launchList;
+  };
+
   render() {
-    console.log(this.state.launches[0]);
-    return (
-      <div className="launch-list">
-        <Launch
-          banner="https://live.staticflickr.com/65535/50241845831_9a7412e81d_o.jpg"
-          title="FalconSat"
-          launchDate="2006-03-25T10:30:00+12:00"
-          description="Description.........."
-        />
-        <Launch
-          banner="https://live.staticflickr.com/65535/50241845831_9a7412e81d_o.jpg"
-          title="FalconSat"
-          launchDate="2006-03-25T10:30:00+12:00"
-          description="Description.........."
-        />
-        <Launch
-          banner="https://live.staticflickr.com/65535/50241845831_9a7412e81d_o.jpg"
-          title="FalconSat"
-          launchDate="2006-03-25T10:30:00+12:00"
-          description="Description.........."
-        />
-      </div>
-    );
+    return <div className="launch-list">{this.launchlist()}</div>;
   }
 }
