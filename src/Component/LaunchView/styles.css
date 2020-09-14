@@ -17,5 +17,11 @@
 
 .launch-view .description {
   color: grey;
+  padding-bottom: 50px;
   font-size: 18px;
+}
+
+.launch-view img {
+  height: 500px;
+  padding-bottom: 25px;
 }
