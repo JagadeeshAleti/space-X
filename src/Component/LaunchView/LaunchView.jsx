@@ -21,28 +21,25 @@ export class LaunchView extends React.Component {
         console.error(error);
       });
   };
+
+  launchAttribute = (title, key) => {
+    const value = this.state.launch[key];
+    return (
+      <div>
+        <h1>{title}</h1>
+        <h1>{value}</h1>
+      </div>
+    );
+  };
+
   render() {
     console.log(this.state);
     return (
       <div>
-        <div>
-          <h1>Mission</h1>
-          <h1>{this.state.launch.mission_name}</h1>
-        </div>
-
-        <div>
-          <h1>Flight Number</h1>
-          <h1>{this.state.launch.flight_number}</h1>
-        </div>
-
-        <div>
-          <h1>Launch Date</h1>
-          <h1>{this.state.launch.launch_date_local}</h1>
-        </div>
-        <div>
-          <h1>Details</h1>
-          <h1>{this.state.launch.details}</h1>
-        </div>
+        {this.launchAttribute("Mission Name", "mission_name")}
+        {this.launchAttribute("Flight Number", "flight_number")}
+        {this.launchAttribute("Launch Date", "launch_date_local")}
+        {this.launchAttribute("Details", "details")}
       </div>
     );
   }
