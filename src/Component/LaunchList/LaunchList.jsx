@@ -33,7 +33,7 @@ export class LaunchList extends React.Component {
           ? "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSvtncECc4eL_-DVufFbTrFxAnV54KtACItKg&usqp=CAU"
           : launch.links.flickr_images[0];
       return (
-        <Link key={"launch_" + index} to="/launch">
+        <Link key={"launch_" + index} to={"/launch/" + launch.flight_number}>
           <Launch
             banner={image}
             title={launch.mission_name}
