@@ -1,15 +1,17 @@
 import React from "react";
 import axios from "axios";
+import { withRouter } from "react-router";
 export class LaunchView extends React.Component {
   state = {
     launch: {},
   };
   componentDidMount = () => {
-    this.getLaunchView();
+    const flightNo = this.props.match.params.flight_number;
+    this.getLaunchView(flightNo);
   };
-  getLaunchView = () => {
+  getLaunchView = (flightNo) => {
     axios
-      .get("https://api.spacexdata.com/v3/launches/2")
+      .get("https://api.spacexdata.com/v3/launches/" + flightNo)
       .then((response) => {
         this.setState({
           launch: response.data,
@@ -28,3 +30,5 @@ export class LaunchView extends React.Component {
     );
   }
 }
+
+export default withRouter(LaunchView);
