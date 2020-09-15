@@ -52,15 +52,19 @@ export class LaunchView extends React.Component {
     const hashImages = this.state.launch.links.flickr_images.length > 0;
     return (
       <div className="launch-view">
-        {this.launchAttribute("Mission Name", "mission_name")}
-        {this.launchAttribute("Flight Number", "flight_number")}
-        {this.launchAttribute("Launch Date", "launch_date_local")}
+        <div className="attibute-section">
+          {this.launchAttribute("Mission Name", "mission_name")}
+          {this.launchAttribute("Flight Number", "flight_number")}
+          {this.launchAttribute("Launch Date", "launch_date_local")}
+          <hr />
+        </div>
         <div className="flickr_images">
           {hashImages &&
             this.state.launch.links.flickr_images.map((each, index) => (
               <img key={index} style={{ width: "100%" }} src={each} />
             ))}
         </div>
+        <hr />
         <p className="description">{this.state.launch.details}</p>
       </div>
     );

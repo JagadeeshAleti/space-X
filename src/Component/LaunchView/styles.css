@@ -1,28 +1,46 @@
 .attribute {
   display: flex;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
 .attribute h1 {
   color: cadetblue;
   width: 400px;
+  margin: 0;
   font-size: 24px;
 }
 
 .launch-view {
   max-width: 1000px;
+  width: 820px;
+  padding: 20px;
   margin: auto;
   margin-top: 50px;
 }
 
 .launch-view .description {
   color: grey;
-  padding-bottom: 50px;
-  padding-top: 50px;
   font-size: 18px;
 }
 
 .launch-view img {
-  height: 500px;
-  padding-top: 20px;
+  height: 400px;
+  width: 400px !important;
+
+  border: 1px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 9px 1px cadetblue;
+}
+
+.flickr_images {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.attibute-section {
+  margin-bottom: 50px;
 }
