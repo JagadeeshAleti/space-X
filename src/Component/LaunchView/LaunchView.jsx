@@ -1,17 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { withRouter } from "react-router";
-import { Zoom } from "react-slideshow-image";
 import "./styles.css";
-
-const zoomOutProperties = {
-  duration: 1000,
-  transitionDuration: 500,
-  infinite: true,
-  indicators: true,
-  scale: 0.4,
-  arrows: true,
-};
 
 export class LaunchView extends React.Component {
   state = {
@@ -61,7 +51,7 @@ export class LaunchView extends React.Component {
         <div className="flickr_images">
           {hashImages &&
             this.state.launch.links.flickr_images.map((each, index) => (
-              <img key={index} style={{ width: "100%" }} src={each} />
+              <img key={index} style={{ width: "100%" }} src={each} alt={"flight_launch"} />
             ))}
         </div>
         <hr />
